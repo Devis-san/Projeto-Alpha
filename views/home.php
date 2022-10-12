@@ -1,6 +1,8 @@
 <?php
+
     if(!isset($_SESSION['nome'], $_SESSION['email'])){
-        header('Location: login');
+        $_SESSION['msg'] = "Usuário não está logado";
+        header('Location: ../login');
     }
 ?>
 
@@ -22,12 +24,21 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a class="align-left"><?php echo $_SESSION['nome'];?></a></li>
-                <li><a class="align-right" href="<?php session_destroy()?>">Logout</a></li>
+                <li><a><?php echo $_SESSION['nome'], "<br>";?></a><a class="light"><?php echo $_SESSION['email'];?></a></li>
+                <li><a href="../php/destroy.php"><br>Logout</a></li>
             </ul>
         </nav>
     </header>
-    <main></main>
-    <script src="js/mobile-navbar.js"></script>
+    <main>
+
+    
+    </main>
+    
 </body>
+<footer>
+<script src="js/mobile-navbar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+</footer>
 </html>

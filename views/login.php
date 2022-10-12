@@ -1,11 +1,20 @@
 <?php
     include('php/server.php');
+
+    //verifica se o usuario está conectado
+    if(isset($_SESSION['nome'], $_SESSION['email'])){
+        header('Location: home');
+    }
   
     if(isset($_SESSION['msg'])){
         //usa isso ai dps amigao -> https://sweetalert2.github.io/
         echo '<p style="color: white">' . $_SESSION['msg'] . '</p>';
         unset($_SESSION['msg']);
     }
+
+    var_dump($_SESSION['nome'])
+
+
 ?>
 
 <!DOCTYPE html>

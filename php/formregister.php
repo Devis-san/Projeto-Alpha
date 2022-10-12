@@ -1,7 +1,7 @@
 <?php
     //inicia a sessão e inclue o arquivo 'server.php'
     session_start();
-    include_once("php/server.php");
+    include_once("../php/server.php");
 
     //cria variáveis com o valor dos valores correspondentes passados no formulário
     $nome = filter_input(INPUT_POST, 'nome');
@@ -12,7 +12,7 @@
     $result = mysqli_query($conn, $verify);
     $row = mysqli_num_rows($result);
 
-    if($row == 1){ 
+    if($row == 1){
         //se o usuario ja existe ele retorna para o login
         $_SESSION['msg'] = "Usuário já existe";
         header('Location: ../register');

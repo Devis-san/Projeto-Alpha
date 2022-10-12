@@ -1,5 +1,10 @@
 <?php
     include('php/server.php');
+
+    //verifica se o usuario está conectado
+    if(isset($_SESSION['nome'], $_SESSION['email'])){
+        header('Location: home');
+    }
   
     if(isset($_SESSION['msg'])){
         //usa isso ai dps amigao -> https://sweetalert2.github.io/
@@ -18,7 +23,6 @@
     <title>Cadastro</title>
 </head>
 <body class="bodylogin">
-
     <section class="area-login">
         <div class="login">
             <div>

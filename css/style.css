@@ -15,6 +15,11 @@ body.bodylogin{
     src: url(../fonts/LEMONMILK-Regular.otf);
 }
 
+@font-face{
+    font-family: limaol;
+    src: url(../fonts/LEMONMILK-Light.otf);
+}
+
 .login p{
     font-size: 10px;
 }
@@ -97,15 +102,14 @@ nav a:hover{
     opacity: 0.7;
 }
 
-nav a.logo{
+/* nav a.logo{
     font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 4px;
-}
+} */
 
 nav{
     display: flex;
-    justify-content: space-around;
     align-items: center;
     font-family: limao;
     background: #252A34;
@@ -118,14 +122,23 @@ main {
 }
 
 .nav-list{
+    width: 100%;
     list-style: none;
     display: flex;
+    justify-content: space-between;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-left: 0px;
+}
+.nav-list li{
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
-.nav-list li{
-    letter-spacing: 3px;
-    margin-left: 25px;
-
+.light{
+    font-family: limaol;
 }
 
 .mobile-menu{
@@ -141,12 +154,13 @@ main {
     transition: 0.3s;
 }
 
+
+
 @media screen and (max-width: 999px) {
     body{
         overflow-x: hidden;
     }
     .nav-list{
-        float: right;
         margin: 0;
         position: absolute;
         top: 8vh;
